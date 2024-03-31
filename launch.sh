@@ -12,7 +12,7 @@ launch_bar() {
 
 	# Launch the bar
 	# if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-	if [[ "$style" == "hack" ||  "$style" == "hack2" || "$style" == "cuts" ]]; then
+	if [[ "$style" == "hack" ||  "$style" == "hack2" || "$style" == "hack3" || "$style" == "cuts" ]]; then
 		polybar -q top -c "$dir/$style/config.ini" &
 		polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
@@ -36,6 +36,10 @@ elif [[ "$1" == "--hack" ]]; then
 
 elif [[ "$1" == "--hack2" ]]; then
 	style="hack2"
+	launch_bar
+
+elif [[ "$1" == "--hack3" ]]; then
+	style="hack3"
 	launch_bar
 
 elif [[ "$1" == "--docky" ]]; then
