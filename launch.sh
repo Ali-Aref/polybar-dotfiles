@@ -11,14 +11,13 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
-	# if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-	if [[ "$style" == "hack" ||  "$style" == "hack2" || "$style" == "hack3" || "$style" == "cuts" ]]; then
+	if [[ "$style" == "hack" ||  "$style" == "hack2" || "$style" == "cuts" ]]; then
 		polybar -q top -c "$dir/$style/config.ini" &
 		polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-		polybar -q main -c "$dir/$style/config.ini" &	
+		polybar -q main -c "$dir/$style/config.ini" &
 	fi
 }
 
@@ -38,8 +37,8 @@ elif [[ "$1" == "--hack2" ]]; then
 	style="hack2"
 	launch_bar
 
-elif [[ "$1" == "--hack3" ]]; then
-	style="hack3"
+elif [[ "$1" == "--liner" ]]; then
+	style="liner"
 	launch_bar
 
 elif [[ "$1" == "--docky" ]]; then
